@@ -151,14 +151,8 @@ exports.postSignup = (req, res, next) => {
       });
       return user.save();
     })
-    .then(result => {
+    .then(() => {
       res.redirect('/login');
-      // return transporter.sendMail({
-      //   to: email,
-      //   from: 'shop@node-complete.com',
-      //   subject: 'Signup succeeded!',
-      //   html: '<h1>You successfully signed up!</h1>'
-      // });
     })
     .catch(err => {
       const error = new Error(err);
